@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Finance Tracker</title>
+  <link rel="stylesheet" href="static/index.css"> <!-- Link to external CSS file for styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wJLoyWqNqJO+79VZO/QPLF5TKXBGB4fHQ/8H+iFwx0uQS+o3C8RHVyk0D5J9BCYJ" crossorigin="anonymous">
+</head>
+<body>
+  {% if alert_messages %}
+        <div class="container">
+            {% for message in alert_messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+  <div class="container">
+    <div class="sidebar">
+      <div class="profile">
+       
+        <div class="profile-info">
+          <h2>{{ username }}</h2> <!-- Placeholder for username -->
+          
+        </div>
+      </div>
+      <ul>
+        <li><a href="/add_sector">Dashboard</a></li>
+        <li><a href="/add-cash">Add Cash</a></li>
+        <li><a href="/settings">Settings</a></li>
+      </ul>
+    </div>
+    
+    <div class="main-content">
+      <div class="balance-overview">
+        <div class="balance-box">
+          <h2>Balance</h2>
+          <p class="balance">Rs{{ balance }}</p> <!-- Placeholder for balance -->
+        </div>
+        <div class="sectors-tab">
+          <h2>User Sector: {{ user_sector }}</h2>
+      </div>
+        <div class="expense-categories">
+          <div class="category blue">
+            <p>Entertainment</p>
+            <p>Rs{{ entertainment_expense }}</p> <!-- Placeholder for entertainment expense -->
+            <p>Limit: Rs {{ entertainment_limit }}</p>
+          </div>
+          <div class="category yellow">
+            <p>Groceries</p>
+            <p>Rs {{ groceries_expense }}</p> <!-- Placeholder for groceries expense -->
+            <p>Limit: Rs {{ groceries_limit }}</p>
+          </div>
+          <div class="category orange">
+            <p>Utilities</p>
+            <p>Rs {{ utilities_expense }}</p> <!-- Placeholder for utilities expense -->
+            <p>Limit: Rs {{ utilities_limit }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="recent-transactions">
+        <h2>Recent Transactions</h2>
+        <table>
+          <tr>
+            
+            <th>Category</th>
+            <th>Sum</th>
+            <th>Date</th>
+          </tr>
+          {% for transaction in recent_transactions %}
+    <tr>
+      <td>{{ transaction[0] }}</td> <!-- Category -->
+      <td>{{ transaction[1] }}</td> <!-- Amount -->
+      <td>{{ transaction[2] }}</td> <!-- Date -->
+    </tr>
+    {% endfor %}
+        </table>
+      </div>
+      
+      <div class="add-expenditure-form">
+        <h2>Add Expenditure</h2>
+        <form id="expense-form" action="/add-expense" method="post">
+          <!-- Hidden input field for username -->
+          <input type="hidden" name="username" value="{{ username }}">
+      
+          <!-- Input field for purpose -->
+          <label for="purpose">Purpose:</label>
+          <input type="text" id="purpose" name="Purpose" value="Fish">
+      
+          <!-- Input field for sum -->
+          <label for="sum">Sum:</label>
+          <input type="text" id="sum" name="Sum" placeholder="Enter amount">
+      
+          <!-- Input field for date -->
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="Date">
+      
+          <!-- Dropdown select field for category -->
+          <label for="category">Category:</label>
+          <select id="category" name="Category">
+            <option value="Groceries">Groceries</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Entertainment">Entertainment</option>
+          </select>
+      
+          <!-- Submit button -->
+          <button type="submit">Add</button>
+        </form>
+      </div>
+      
+      <div class="savings-tab">
+        <h2>Savings</h2>
+        <div class="savings-details">
+          <p>Total Savings: Rs {{ total_savings }}</p> <!-- Placeholder for total savings -->
+        
+        </div>
+      </div>
+      
+      
+    
+    </div>
+
+
+    
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file for functionality -->
+</body>
+</html>

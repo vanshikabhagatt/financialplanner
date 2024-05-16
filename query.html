@@ -1,0 +1,20 @@
+<form action="/execute_query" method="post">
+    <label for="category">Category:</label>
+    <select id="category" name="category">
+        <option value="groceries">Groceries</option>
+        <option value="utilities">Utilities</option>
+        <option value="entertainment">Entertainment</option>
+        <!-- Add more options as needed -->
+    </select>
+    
+    <label for="date_from">From:</label>
+    <input type="date" id="date_from" name="date_from">
+    
+    <label for="date_to">To:</label>
+    <input type="date" id="date_to" name="date_to">
+    
+    <input type="checkbox" id="include_limit" name="include_limit">
+    <label for="include_limit">Include Expense Limit</label>
+    
+    <button type="submit">Execute Query</button>
+</form>

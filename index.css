@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #cec781;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .sidebar {
+    background-color: #1f0c0c;
+    color: #fff;
+    padding: 20px;
+    width: 250px;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  .profile-info {
+    margin-left: 15px;
+  }
+  
+  .profile-info h2 {
+    margin: 5px 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .main-content {
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  .balance-box {
+    background-color: #4a944c;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .expense-categories {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .category {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+  }
+  
+  .blue { background-color: #f33a21; }
+  .yellow { background-color: #273e81; }
+  .orange { background-color: #1e717d; }
+  .black { background-color: #616161; }
+  
+  .recent-transactions {
+    background-color:  #cec781;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .add-expenditure-form {
+    background-color:  #cec781;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .add-expenditure-form input[type="text"],
+  .add-expenditure-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .add-expenditure-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .category-icons img {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .savings-tab {
+    background-color:  #4a944c;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }

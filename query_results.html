@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Results</title>
+</head>
+<body>
+    <h1>Query Results</h1>
+    <table>
+        <tr>
+            <th>Expense ID</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <!-- Add more columns as needed -->
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.ExpenseID }}</td>
+            <td>{{ result.Category }}</td>
+            <td>{{ result.Amount }}</td>
+            <!-- Display more columns as needed -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

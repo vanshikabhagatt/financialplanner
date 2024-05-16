@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Cash</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles1.css') }}">
+    <!-- Link to your custom CSS file for styling -->
+</head>
+<body>
+    <div class="container">
+        <h2>Add Cash</h2>
+        <form action="{{ url_for('add_cash') }}" method="post">
+            <div class="form-group">
+                <label for="cash_amount">Enter Cash Amount:</label>
+                <input type="text" id="cash_amount" name="cash_amount" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Cash</button>
+        </form>
+    </div>
+</body>
+</html>
